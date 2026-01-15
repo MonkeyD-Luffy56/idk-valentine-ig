@@ -1,0 +1,129 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Prevent scrollbars when button moves */
+    position: relative;
+}
+
+/* Blurred background image */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+/* Main Container */
+.container {
+    z-index: 10;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+/* Typography */
+h1 {
+    font-size: 1.5rem;
+    color: #d81b60;
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+    font-family: serif; 
+}
+
+/* Image Styling */
+.gif-container {
+    margin-bottom: 30px;
+}
+
+.gif-container img {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-width: 100%;
+    height: auto;
+    border: 4px solid white;
+}
+
+/* Button Group */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), top 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#yesBtn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    z-index: 20;
+}
+
+#yesBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#noBtn {
+    background-color: #f44336; /* Red */
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+/* Footer Styling */
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+footer a {
+    color: #d81b60;
+    text-decoration: none;
+}
+
+/* Success Message State */
+.hidden {
+    display: none;
+}
+
+#success-content {
+    opacity: 0; 
+}
